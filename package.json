@@ -1,0 +1,28 @@
+{
+  "name": "pusher-sample",
+  "version": "1.0.0",
+  "description": "pusher-sample",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/destromas1/pusher-sample.git"
+  },"dependencies": {
+    "express": "^4.15.2",
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "jade": "^1.11.0",    
+    "pusher": "^1.5.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/destromas1/pusher-sample/issues"
+  },
+  "homepage": "https://github.com/destromas1/pusher-sample#readme"
+}
+
