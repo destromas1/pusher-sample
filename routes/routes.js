@@ -16,12 +16,21 @@ var pusher = new Pusher({
   	encrypted: true
 });
 
+router.post('/api/pusher/auth', function(req, res) {
+  console.log("auth------------>");
+  var socketId = req.body.socket_id;
+  var channel = req.body.channel_name;
+  var auth = pusher.authenticate(socketId, channel);
+  console.log(socketId,channel , auth);
+  res.send(auth);
+});
+
 
 router.post('/api/notification', function(req, res){
 	console.log(req.body.message);
 	var message = escapeHTML(req.body.message);
 
-	pusher.trigger('notifications-channel', 'new_notification', {
+	pusher.trigger('private-notifications-channel', 'new_notification', {
 		message: message + " from Server"
 	});
 	res.send("API Notification triggered Succesfully!");

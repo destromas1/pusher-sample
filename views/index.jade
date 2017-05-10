@@ -22,6 +22,7 @@ html.
 
 			var pusher = new Pusher('cd0a44fe0831a8327670', {
 				cluster: 'eu',
+				authEndpoint: 'api/pusher/auth',
 				encrypted: true
 			});
 
@@ -32,7 +33,7 @@ html.
 				}
 			});
 
-			var notificationsChannel = pusher.subscribe('notifications-channel');
+			var notificationsChannel = pusher.subscribe('private-notifications-channel');
 
 			notificationsChannel.bind('new_notification', function(notification){
 				console.log("new_notification fired" , notification);
